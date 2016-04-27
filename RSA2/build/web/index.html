@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			RSA
+		</title>
+		<script type="text/javascript">
+
+		
+    
+    function validarNumeros(e) { 
+		teclad = (document.all) ? e.keycode : e.which;
+				if(teclad==8) return true;
+				patron = /[0-9\d .]/;
+				tec = String.fromCharCode(teclad);
+				return patron.test(tec);
+		
+                function disableKeys(e)
+{
+var ev=(!e)?window.event:e;//IE:Moz
+if(ev.keyCode==8)
+{
+return false;
+}
+if((ev.altKey==true)&amp;&amp;(ev.keyCode>=65) &amp;&amp; (ev.keyCode<=90))
+{
+return false;
+}
+// http://www.infysolutions.com
+
+if((ev.altKey==true)||(ev.ctrlKey==true))
+{ 
+return false;
+}
+}
+
+    }
+</script>	
+    
+<script>
+    
+    
+    
+    function validar () {
+	
+	if(form.p.value == 0){
+		alert("Ingresa un numero en el campo P porfavor.");
+                form.p.focus();
+                return (false);
+	}
+        
+         var num1=parseInt(form.p.value);
+              
+           
+            for (var i=2;i<num1;i++) {
+            if(num1 % i == 0) {
+            alert('El numero ' +num1+ ' no es primo'); 
+            form.p.focus();
+            return (false);
+                break;
+            
+        
+        }
+            }
+        if(form.q.value == 0){
+		alert("Ingresa un numero en el campo Q porfavor.")
+                form.q.focus();
+                return (false);
+	}
+        
+          var num2=parseInt(form.q.value);
+             
+           
+            for (var i=2;i<num2;i++) {
+            if(num2 % i == 0) {
+            alert('El numero ' +num2+ ' no es primo'); 
+            form.q.focus();
+            return (false);
+                break;
+            } 
+           
+            }
+               
+            
+        if(form.mc.value == 0){
+		alert("Introduce tu mensaje.")
+                form.mc.focus();
+                return (false);
+	}
+        
+            
+            
+            
+}	
+
+		</script>
+</head>
+<body bgcolor="green" text="yellow">
+	<center>
+	<font face="Verdana" size=6 color="yellow">
+ 	RSA</FONT>
+
+ 	<font face="verdana">
+ 	<p>Introduzca los valores e introduzca su mensaje.</p>
+ 	<br>
+	
+        <form name = "form" action="JS3" onsubmit="return validar()">
+	
+		<p>P <input type="text" name="p" size="5" maxlength="7" onkeydown="return validarNumeros(event)">
+		</p>
+		
+                <p>Q <input type="text" name="q" size="5" maxlength="7" onkeydown="return validarNumeros(event)">
+		</p>
+		<p><b>Mensaje a cifrar: </b><br><textarea name="mc" rows="10" cols="40"></textarea> </p>		
+		
+
+		<input type="reset">
+		<input type="submit" value="Cifrar">
+		
+	</form>
+	</font>
+	</center>
+</body>
+</html>
